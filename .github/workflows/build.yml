@@ -57,9 +57,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install buildozer setuptools cython==0.29.34
 
-      - name: Aceptar licencia de Android
+      - name: Configurar licencia Android
         run: |
-          sed -i 's/# android.accept_sdk_license = False/android.accept_sdk_license = True/' buildozer.spec
+          echo "android.accept_sdk_license = True" >> buildozer.spec
 
       - name: Preparar herramientas Android
         run: |
